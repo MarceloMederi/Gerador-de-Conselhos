@@ -1,52 +1,38 @@
+import random
+
 import time
 
-import os
-
-import  random
-
 def argumento():
-    quantidade = int(input("Digite a quantidade de palavras a serem sorteadas: "))
-    conselho_aleatorios = ['Não viva somente do que faz sentido. Viva do que te faz feliz.', 
-    'Livre-se dos bajuladores. Mantenha perto de você pessoas que te avisem quando você erra.',
-    'Tente não julgar uma pessoa sem antes conhecer suas dores, sua vida e sua história.' ,
-    'Não grite alto por sua felicidade, pois a inveja possui sono leve.' ,
-    'Se você está andando no caminho certo e está disposto a continuar caminhando, eventualmente, você vai progredir.' ,
-    'Quem tem mais do que precisa ter quase sempre se convence que não tem o bastante, e fala demais por não ter nada a dizer.' ,
-    'Bobeira é não viver a realidade.', 
-    'A verdade alivia mais do que machuca. E estará sempre acima de qualquer falsidade como o óleo sobre a água.',
-    'Não diga as coisas com pressa. Mais vale um silêncio certo que uma palavra errada!' , 
-    'Se não puder se destacar pelo talento, vença pelo esforço.' , 
-    'Cuide da sua saúde: se estiver boa, preserve-a. Se estiver instável, melhore-a. Se estiver além do que você possa fazer, peça ajuda.' ,
-    'Regra de ouro: não faça com os outros o que você não gostaria que fizessem com você.' ,
-    'Aproveitar um bom conselho requer mais sabedoria do que dá-lo.' ,
-    'A felicidade é um problema individual. Aqui, nenhum conselho é válido. Cada um deve procurar, por si, tornar-se feliz.' ,
-    'Ouça o silêncio, esse é o melhor conselho.' ,
-    'Você pode se lamentar muitas vezes por ter pronunciado uma palavra indelicada, mas nunca por ter pronunciado uma palavra bondosa.' ,
-    'Pelos erros dos outros, o homem sensato corrige os seus.' ,
-    'O essencial é invisível aos olhos. Só se vê bem com o coração.'
-    'A vida é imprevisível, mas tentamos estar prontos da melhor forma possível. Confira, nesta categoria, frases que vão te preparar para todas as situações.' ,
-    'Aprecie as coisas simples.' ,
-    'O caminho mais fácil, nem sempre é o melhor.' ,
-    'Lágrimas fazem parte. Suporte, queixe-se e vá adiante. As únicas pessoas que estão conosco a vida inteira somos nós mesmos. Mostre estar vivo enquanto estiver vivo.' ,
-    'Nunca se esqueça daquilo que faz seus olhos brilharem.' ,
-    'Livre-se de todos os números não-essenciais. Isto inclui idade, peso e altura. Deixe os médicos se preocupar com eles. É para isso que você os paga.' ,
-    'Cerque-se daquilo que ama, seja família, animais de estimação, coleções, música, plantas, hobbies, seja o que for. Seu lar é seu refúgio.' ,
-    'Se você ficar sozinho, pega a solidão e dança!' ,
-    'Aquele que tem medo do novo, tem medo da vida, pois cada dia é um novo dia. Vivendo e aprendendo…' ,
-    'Se você não pode ser o Sol, seja um planeta, mas nunca deixe de irradiar a luz que mora no seu coração.' ,
-    'Faça algo que valha a pena ser recordado mais tarde.' ,
-    'Ria sempre, em alto e bom som! Ria até perder o fôlego.' ,
-    'É impossível agradar a todos. Portanto, pare de viver para os outros e viva para você mesmo.' ,
-    'Você só tem um inimigo e um campo de batalha: a sua mente.' ,
-    'Se os problemas te derem uma rasteira, levante e ria da cara deles.' ,
-    'Ao invés de chorar pelo leite derramado, aperte as tetas da vaca e baba mais um copo.' ,
-    'O único modo de alguém ser feliz é julgar-se feliz.' ,
-    'Deixe aos homens a ignorância dos homens, então, dê tempo ao tempo.' ,
-    'Mais difícil do que ter uma grande ideia é reconhecer uma. Especialmente se for de outra pessoa!']
-    
+
+    while True:
+        try:
+            entrada = input("Digite um número inteiro: ")
+            if len(entrada) == 0:
+                raise ValueError("Entrada Vazia")
+            quantidade = int(entrada)
+            break
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número inteiro válido.")
+
+    conselho_aleatorios = ["As montanhas da vida não existem apenas para que você chegue no topo, mas para que você aprenda o valor da escalada." ,
+        "A vida pode até te derrubar, mas é você quem escolhe a hora de se levantar." ,
+        "É melhor ser verdadeiro e solitário do que viver em falsidade e estar sempre acompanhado." ,
+        "Na minha vida até agora, descobri que na verdade só há dois tipos de pessoas: aqueles que estão com você, e aqueles que estão contra você. Aprenda a reconhecê-los, pois eles são frequentemente e facilmente confundidos um com o outro." ,
+        "Ser feliz não é ter uma vida perfeita, mas sim reconhecer que vale a pena viver apesar de todos os desafios e perdas." ,
+        "Aprendi que não devo me importar com comentários que não vão mudar minha vida." ,
+        "A vida tem sons, que pra gente ouvir precisa aprender a começar de novo. É como tocar o mesmo violão e nele compor uma nova canção." ,
+        "Na vida irás encontrar três tipos de pessoas: aquelas que irão mudar a tua vida, aquelas que irão prejudicar a tua vida, aquelas que serão a tua vida." ,
+        "A vida é basicamente uma montanha russa. Tem seus altos e baixos, e o mais importante: você tem que fazer o ingresso valer a pena." ,
+        "O mundo está nas mãos daqueles que têm a coragem de sonhar e de correr o risco de viver seus sonhos." ,
+        "Deus sabe quem colocar na sua vida, da mesma forma que sabe quem tirar." ,
+        "Não viva para que sua presença seja notada, mas para que sua falta seja sentida." ,
+        "Um novo dia é uma página em branco na sua vida. Escreva apenas o que vale a pena. Bom dia!" ,
+        "Passamos a vida procurando em pessoas o que só podemos encontrar em Deus." ,
+        "...bom mesmo é ir à luta com determinação, abraçar a vida com paixão, perder com classe e vencer com ousadia, porque o mundo pertence a quem se atreve e a vida é muito pra ser insignificante."]
+        
     if quantidade == 0:
-        print("Você digitou Zero! , por isso nenhum conselho foi gerado.")
-    
+        print("Você digitou Zero!, por isso nenhum conselho foi gerado.")
+     
     while quantidade == 1:
         conselho1 = random.choice(conselho_aleatorios)
         print()
@@ -63,15 +49,195 @@ def argumento():
         print(conselho2)
         print()
         break
+        
+    while quantidade == 3:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        break
+        
+    while quantidade == 4:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        break
+        
+    while quantidade == 5:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        conselho5 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        print()
+        print(conselho5)
+        break
+        
+    while quantidade == 6:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        conselho5 = random.choice(conselho_aleatorios)
+        conselho6 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        print()
+        print(conselho5)
+        print()
+        print(conselho6)
+        break
+        
+    while quantidade == 7:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        conselho5 = random.choice(conselho_aleatorios)
+        conselho6 = random.choice(conselho_aleatorios)
+        conselho7 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        print()
+        print(conselho5)
+        print()
+        print(conselho6)
+        print()
+        print(conselho7)
+        break
     
+    while quantidade == 8:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        conselho5 = random.choice(conselho_aleatorios)
+        conselho6 = random.choice(conselho_aleatorios)
+        conselho7 = random.choice(conselho_aleatorios)
+        conselho8 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        print()
+        print(conselho5)
+        print()
+        print(conselho6)
+        print()
+        print(conselho7)
+        print()
+        print(conselho8)
+        break
+        
+    while quantidade == 9:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        conselho5 = random.choice(conselho_aleatorios)
+        conselho6 = random.choice(conselho_aleatorios)
+        conselho7 = random.choice(conselho_aleatorios)
+        conselho8 = random.choice(conselho_aleatorios)
+        conselho9 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        print()
+        print(conselho5)
+        print()
+        print(conselho6)
+        print()
+        print(conselho7)
+        print()
+        print(conselho8)
+        print()
+        print(conselho9)
+        break
+        
+    while quantidade == 10:
+        conselho1 = random.choice(conselho_aleatorios)
+        conselho2 = random.choice(conselho_aleatorios)
+        conselho3 = random.choice(conselho_aleatorios)
+        conselho4 = random.choice(conselho_aleatorios)
+        conselho5 = random.choice(conselho_aleatorios)
+        conselho6 = random.choice(conselho_aleatorios)
+        conselho7 = random.choice(conselho_aleatorios)
+        conselho8 = random.choice(conselho_aleatorios)
+        conselho9 = random.choice(conselho_aleatorios)
+        conselho10 = random.choice(conselho_aleatorios)
+        print()
+        print(conselho1)
+        print()
+        print(conselho2)
+        print()
+        print(conselho3)
+        print()
+        print(conselho4)
+        print()
+        print(conselho5)
+        print()
+        print(conselho6)
+        print()
+        print(conselho7)
+        print()
+        print(conselho8)
+        print()
+        print(conselho9)
+        print()
+        print(conselho10)
+        break
+        
 def menu():
     print("*" * 25)
     print("GERADOR DE CONSELHOS")
     print("*" * 25)
-    time.sleep(1)
     print()
- 
-while True: 
+    time.sleep(1)
+        
+while True:
+
     menu()
     argumento()
-    os.system('clear') or None
