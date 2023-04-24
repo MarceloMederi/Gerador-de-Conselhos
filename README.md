@@ -16,3 +16,5 @@ Foi mantido 15 conselhos alterado o loop para FOR que ajudou  diminuir o codigo.
 Estruturado o ValueError caso a entrada seja vazia ou strings.
 
 Foi divertido montar cada linha do codigo, aprendi a estrtura choice e sample da biblioteca random, aprendi a tratar a entrada vazia e string.
+
+Esta sendo desenvolvido uma interface no TKinter
