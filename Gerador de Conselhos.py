@@ -1,25 +1,10 @@
 import random
-
+import tkinter as tk
 import time
 
-def argumento():
-
-    while True:
-        try:
-            entrada = input("Digite um número para gerar conselhos: ")
-            if len(entrada) == 0:
-                raise ValueError("Entrada Vazia")
-            quantidade = int(entrada)
-            break
-        except ValueError:
-            print()
-            print("Entrada inválida. Por favor, digite um número inteiro válido.")
-            print()
-            
-    if quantidade <= 15:
-
-        conselho_aleatorios = [
-            "As montanhas da vida não existem apenas para que você chegue no topo, mas para que você aprenda o valor da escalada.",
+def gerar_conselhos():
+    conselho_aleatorios = [
+        "As montanhas da vida não existem apenas para que você chegue no topo, mas para que você aprenda o valor da escalada.",
             "A vida pode até te derrubar, mas é você quem escolhe a hora de se levantar.",
             "É melhor ser verdadeiro e solitário do que viver em falsidade e estar sempre acompanhado.",
             "Na minha vida até agora, descobri que na verdade só há dois tipos de pessoas: aqueles que estão com você, e aqueles que estão contra você. Aprenda a reconhecê-los, pois eles são frequentemente e facilmente confundidos um com o outro.",
@@ -34,16 +19,19 @@ def argumento():
             "Um novo dia é uma página em branco na sua vida. Escreva apenas o que vale a pena. Bom dia!",
             "Passamos a vida procurando em pessoas o que só podemos encontrar em Deus.",
             "...bom mesmo é ir à luta com determinação, abraçar a vida com paixão, perder com classe e vencer com ousadia, porque o mundo pertence a quem se atreve e a vida é muito pra ser insignificante."]
-
+    try:
+        quantidade = int(entrada.get())
+    except ValueError:
+        gerado["text"] = "Por favor, digite uma número inteiro."
+        return
+        
+    if quantidade == 0:
+        gerado["text"] = "Você digitou Zero!, por isso nenhum conselho foi gerado."
+        return
+    
+    if quantidade <= 15:
         palavras_sorteadas = []
-    
-    
-        if quantidade == 0:
-            print()
-            print("Você digitou Zero!, por isso nenhum conselho foi gerado.")
-            print()
-            return
-
+        conselhos = []
         for i in range(quantidade):
             conselho = random.choice(conselho_aleatorios)
         
@@ -51,27 +39,29 @@ def argumento():
                 conselho = random.choice(conselho_aleatorios)
             
             palavras_sorteadas.append(conselho)
-            print()
-            print(f"conselho {i+1}: {conselho}")
-            print()
+            conselhos.append(conselho)
+        
+        gerado["text"] = "\n\n".join([f"conselho {i+1}: {conselho}" for i, conselho in enumerate(conselhos)])
         
     else:
-        print()
-        print("A quantidade de conselhos é 15. Por favor informe novamente")
-        print()
-        
-def menu():
-    print("*" * 25)
-    print("GERADOR DE CONSELHOS")
-    print("*" * 25)
-    print()
-    print("#" * 78)
-    print("# Digite entre 1 e 15 para selecionar a quantidade de conselhos a ser gerado #")
-    print("#" * 78)
-    print()
-    time.sleep(1)
+        gerado["text"] = "A quantidade de conselhos é 15. Por favor informe novamente."
 
-while True:
+janela = tk.Tk()
+janela.title("GERADOR DE CONSELHOS")
 
-    menu()
-    argumento()
+menu = tk.Label(janela, text="GERADOR DE CONSELHOS", font=("Arial", 20))
+menu.pack()
+
+entrada_label = tk.Label(janela, text="Digite a quantidade de conselhos (1-15):")
+entrada_label.pack()
+
+entrada = tk.Entry(janela)
+entrada.pack()
+
+botao_gerar = tk.Button(janela, text="Gerar Conselhos", command=gerar_conselhos)
+botao_gerar.pack()
+
+gerado = tk.Label(janela, text="")
+gerado.pack()
+
+janela.mainloop()
