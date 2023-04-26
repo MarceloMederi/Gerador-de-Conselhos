@@ -20,3 +20,5 @@ Foi divertido montar cada linha do codigo, aprendi a estrtura choice e sample da
 Esta sendo desenvolvido uma interface no TKinter
 
 Realizado o tratamento da janela do TKinter e o codigo esta sendo finalizado
+
+Codigo finalizado.
