@@ -22,3 +22,5 @@ Esta sendo desenvolvido uma interface no TKinter
 Realizado o tratamento da janela do TKinter e o codigo esta sendo finalizado
 
 Codigo finalizado.
+
+Sera estudado flash no codigo, para complementar.
