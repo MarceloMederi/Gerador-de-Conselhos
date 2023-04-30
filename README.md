@@ -24,3 +24,5 @@ Realizado o tratamento da janela do TKinter e o codigo esta sendo finalizado
 Codigo finalizado.
 
 Sera estudado flash no codigo, para complementar.
+
+Foi incluido a cor do campo Label quando os conselhos são gerados.
