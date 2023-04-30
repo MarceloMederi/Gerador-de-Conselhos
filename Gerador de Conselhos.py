@@ -1,6 +1,5 @@
 import random
 import tkinter as tk
-import time
 
 def gerar_conselhos():
     conselho_aleatorios = [
@@ -43,6 +42,10 @@ def gerar_conselhos():
         
         gerado["text"] = "\n\n".join([f"conselho {i+1}: {conselho}" for i, conselho in enumerate(conselhos)])
         
+        # Implementação do efeito de flash
+        gerado.configure(bg="light green")
+        janela.after(15000, lambda: gerado.configure(bg="white"))
+    
     else:
         gerado["text"] = "A quantidade de conselhos é 15. Por favor informe novamente."
 
